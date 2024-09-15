@@ -1,21 +1,45 @@
- const nombre = document.querySelector('#nombre');
- const apellido = document.querySelector('#apellido');
- const boton = document.querySelector('#boton');
+const nombreInput = document.getElementById('nombre');
+const apellidoInput = document.getElementById('apellido');
+const emailInput = document.getElementById('email');
+const mensajeInput = document.getElementById('mensaje');
 
- nombre.onchange = () => { console.log("Cambio el valor del input: " + nombre.value); }
- apellido.addEventListener('input', () => { console.log(apellido.value) });
+const outputNombre = document.getElementById('outputNombre');
+const outputApellido = document.getElementById('outputApellido');
+const outputEmail = document.getElementById('outputEmail');
+const outputMensaje = document.getElementById('outputMensaje');
 
- let formulario = document.querySelector('#formulario');
- formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
-     let form = e.target;
-     document.getElementById('rnombre').innerHTML = document.getElementById('nombre').value;
-     document.getElementById('rapellido').innerHTML = document.getElementById('apellido').value;
- });
+nombreInput.addEventListener('input', () => {
+    outputNombre.textContent = nombreInput.value;
+});
 
-Swal.fire({
-    title: 'Error!',
-    text: 'Do you want to continue',
-    icon: 'error',
-    confirmButtonText: 'Cool'
-  })
+apellidoInput.addEventListener('input', () => {
+    outputApellido.textContent = apellidoInput.value;
+});
+
+emailInput.addEventListener('input', () => {
+    outputEmail.textContent = emailInput.value;
+});
+
+mensajeInput.addEventListener('input', () => {
+    outputMensaje.textContent = mensajeInput.value;
+});
+
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();  
+    const formData = {
+        nombre: nombreInput.value,
+        apellido: apellidoInput.value,
+        email: emailInput.value,
+        mensaje: mensajeInput.value
+    };
+
+    console.log("Información guardada:", formData);
+
+    Swal.fire({
+        title: 'Información guardada',
+        text: 'La información se ha guardado correctamente en consola.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+});

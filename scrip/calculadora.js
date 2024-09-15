@@ -18,26 +18,24 @@ function calcularTotal() {
     var tipoAlquiler = document.getElementById("tipo-alquiler").value;
     var totalInput = document.getElementById("TOTAL");
     var total = 0;
-    var selectedHorario = null; // Variable to store the selected horario
+    var selectedHorario = null;
 
     if (tipoAlquiler === "dia") {
         var cantidadPersonasDia = parseInt(document.getElementById("cantidad-personas-dia").value) || 0;
         var precioDia1 = 4600;
         var precioDia2 = 5000;
 
-        var horarioDiaCheckboxes = document.getElementsByName("horario-dia"); // Get all checkboxes
+        var horarioDiaCheckboxes = document.getElementsByName("horario-dia"); 
 
-        // Check for selected checkboxes and calculate total
         for (var i = 0; i < horarioDiaCheckboxes.length; i++) {
             if (horarioDiaCheckboxes[i].checked) {
-                if (!selectedHorario) { // Only count the first selected checkbox
+                if (!selectedHorario) { 
                     selectedHorario = horarioDiaCheckboxes[i].id;
                     if (selectedHorario === "horario-dia-1") {
                         total = cantidadPersonasDia * precioDia1;
                     } else if (selectedHorario === "horario-dia-2") {
                         total = cantidadPersonasDia * precioDia2;
                     }
-                    // Deselect all other checkboxes
                     for (var j = 0; j < horarioDiaCheckboxes.length; j++) {
                         if (i !== j) {
                             horarioDiaCheckboxes[j].checked = false;
