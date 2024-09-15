@@ -168,3 +168,43 @@ footer * {
 .derechos-reservados {
     margin-top: 20px;
 }
+
+/* INPUT */
+
+.form-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.button-input {
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #45a049;
+}
+.respuestas *{
+    color: white;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+}

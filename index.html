@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://yt3.googleusercontent.com/Ul9Oknzq5xsbCPH7HgF0pcJCtseoSK-ZExzGiBwKsJEiqMsJOLC4p9DiM5BMzNt66TZvmJcoTQ=s900-c-k-c0x00ffffff-no-rj">
     <script src="https://kit.fontawesome.com/5e04496cb8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Seccion.css">
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" href="navegador.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./estilos/Seccion.css">
+    <link rel="stylesheet" href="./estilos/estilo.css">
+    <link rel="stylesheet" href="./estilos/calculadora.css">
+    <link rel="stylesheet" href="./estilos/navegador.css">
     <title>Alquiler quinta</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 <header class="navegador">
     <div class="header-content">
-        <h1 class="titulo" id="titulo">Multiespacio social</h1>
+        <h1 class="titulo">Multiespacio social</h1>
         <button class="menu-toggle" id="menu-toggle">=</button>
     </div>
     <nav class="nave" id="nav-menu">
@@ -28,6 +28,8 @@
         <a class="nave-1" href="#condiciones">Condiciones</a>
         <a class="nave-1" href="#precio">Precios</a>
         <a class="nave-1" href="#descarga">Descarga</a>
+        <a class="nave-1" href="/Pages/contacto.html">Contacto</a>
+    
     </nav>
 </header>
 
@@ -139,17 +141,50 @@
         </div>
     </div>
     
+    <!-- CALCULADORA -->
+    <h2 class="sub-titulos" id="precio">Precios</h2>
+    
+<div class="calculadora">
+    <label>
+        <select id="tipo-alquiler" class="conten-alquiler" onchange="mostrarCampos()">
+            <option value="dia">Pasar el día</option>
+            <option value="hospedaje">Por Hospedaje</option>
+        </select>
+    </label>
+
+    <div id="horario-dia" style="display: none;" class="conten-horario">
+        <label class="horario"> <input type="checkbox" id="horario-dia-1" name="horario-dia"> 10hs a 19hs</label>
+        <label class="horario"> <input type="checkbox" id="horario-dia-2" name="horario-dia"> 21hs a 6am</label>
+        <br> <br>
+        <label><input type="number" id="cantidad-personas-dia" min="20" max="80" placeholder="Cantidad de personas..." style="width: 200px;"></label>
+        <span id="mensaje-personas-dia" class="mensaje-error">Debe ser entre 20 y 80 personas</span>
+    </div>
+
+    <div id="horario-hospedaje" style="display: none;">
+        <label><input type="number" id="cantidad-dias" min="2" max="15" placeholder="Cantidad de Días..." style="width: 200px;"></label>
+        <span id="mensaje-dias" class="mensaje-error">Debe ser entre 2 y 15 días</span>
+        <br>
+        <label><input type="number" id="cantidad-personas-hospedaje" min="2" max="5" placeholder="Cantidad de personas..." style="width: 200px;"></label>
+        <span id="mensaje-personas-hospedaje" class="mensaje-error">Debe ser entre 2 y 5 personas</span>
+    </div>
+
+    <label><input type="text" id="TOTAL" placeholder="TOTAL" readonly style="width: 200px;"></label>
+</div>
+
+    
 <!-- DESCARGAS -->
         <div class="descargas" id="descarga">
             <h2 class="sub-titulos"id="descargas">Archivos para descargar   </h2>
-            <ul class="lista-descargas" >
-                <li class="archivos-des"><a href="archivo_2" download>Modelo de contrato</a></li>
-                <li class="archivos-des"><a href="archivo_2" download>Normas del espacio</a></li>
-                <li class="archivos-des"><a href="archivo_3" download>Archivo 3</a></li>
+            <ul class="lista-descargas">
+                <li class="archivos-des"><a href="ruta_del_archivo_1" download>Modelo de contrato</a></li>
+                <li class="archivos-des"><a href="ruta_del_archivo_2" download>Normas del espacio</a></li>
+                <li class="archivos-des"><a href="ruta_del_archivo_3" download>Archivo 3</a></li>
+                <!-- Agrega más archivos según sea necesario -->
             </ul>
         </div>
     </section>
         
+
 <!-- FOOTER     -->
 <footer>
     <div class="contenido-footer">
@@ -174,28 +209,10 @@
     <div class="derechos-reservados">
         <p>&copy; 2024 Multiespacio Social. Todos los derechos reservados.</p>
     </div>
-
-    <!-- INPUT -->
-    <div class="form-container" id="formulario">
-        <form>
-            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
-
-            <input type="text" id="apellido" name="apellido" placeholder="Escribe tu apellido">
-
-            <button id="boton" type="submit" class="button-input">Enviar</button>
-        </form>
-    </div>
-    <div class="respuestas" id="respuestas">
-        <h4 id="rnombre">Nombre</h4>
-        <h4 id="rapellido">Apellido</h4>    
-     </div>
 </footer>
-
- 
-
   <!-- script -->
-   <script src="nav.js"></script>
-
+   <script src="./scrip/calculadora.js"></script>
+   <script src="./scrip/nav.js"></script>
 </body>
 </html>
 
