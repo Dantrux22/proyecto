@@ -15,7 +15,6 @@ html {
     outline: none;
 }
 
-/* Contenedor del tipo de alquiler */
 .conten-alquiler {
     width: 100%;
     padding: 10px;
@@ -31,7 +30,7 @@ html {
 /* Checkbox */
 .calculadora input[type="checkbox"] {
     position: relative;
-    top: 20px;
+    top: 6px;
     appearance: none; 
     width: 20px;
     height: 20px;
@@ -42,7 +41,6 @@ html {
     
 }
 
-/* Checkbox (when selected) */
 .calculadora input[type="checkbox"]:checked {
     background-color: #333; 
 }

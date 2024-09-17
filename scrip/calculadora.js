@@ -1,3 +1,24 @@
+Swal.fire({
+    title: 'Alquiler Quinta',
+    text: 'Por favor, acepta nuestros términos y condiciones para continuar.',
+    imageUrl: 'https://yt3.googleusercontent.com/Ul9Oknzq5xsbCPH7HgF0pcJCtseoSK-ZExzGiBwKsJEiqMsJOLC4p9DiM5BMzNt66TZvmJcoTQ=s900-c-k-c0x00ffffff-no-rj', 
+    imageWidth: 100,
+    imageHeight: 100,
+    imageAlt: 'Custom image',
+    showCancelButton: true,
+    confirmButtonColor: '#6C4EF5',  
+    cancelButtonColor: '#7A7A7A',  
+    confirmButtonText: 'Aceptar',
+    cancelButtonText: 'Cancelar',
+    customClass: {
+        popup: 'swal-wide',
+        title: 'swal-title',
+        text: 'swal-text',
+        confirmButton: 'swal-confirm',
+        cancelButton: 'swal-cancel',
+    }
+});
+
 function mostrarCampos() {
     var tipoAlquiler = document.getElementById("tipo-alquiler").value;
     var horarioDia = document.getElementById("horario-dia");
